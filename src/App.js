@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
+import QuoteCard from './QuoteCard';
+import element from './element';
+
 import './App.css';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex flex-wrap justify-center">
+      {element.map((card,index)=>(
+      <QuoteCard key={index} name={card.character} img={card.img} direction={card.direction} quote={card.quote} />
+      ))}
     </div>
   );
 }
